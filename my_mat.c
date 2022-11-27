@@ -9,15 +9,14 @@ int mat[SIZE][SIZE];
 // Using Dynamic Programming to calculate the shortest path for two nodes
 int DpMat[SIZE][SIZE];
 // The indexes in the arrays
-int i, j, k;
 
-void find_paths(int mat [SIZE][SIZE]){
-    BuildDpMat(mat);
-    for (k = 0; k < SIZE; k++)
+void find_paths(int array [SIZE][SIZE]){
+    BuildDpMat(array);
+    for (int k = 0; k < SIZE; k++)
     {
-        for (j = 0; j < SIZE; j++)
+        for (int j = 0; j < SIZE; j++)
         {
-            for (i = 0; i < SIZE; i++)
+            for (int i = 0; i < SIZE; i++)
             {
                 if(DpMat[i][k] + DpMat[k][j] < DpMat[i][j])
                 {
@@ -45,7 +44,7 @@ void BuildDpMat(int arr[SIZE][SIZE]){
 
 // Function number 2
 void isPath(int x, int y){
-    if(mat[x][y]!=0)
+    if(DpMat[x][y]!=0)
     {
         printf("TRUE");
     }
@@ -57,7 +56,7 @@ void isPath(int x, int y){
 
 // Function number 3
 int Shortest_path(int x, int y){
-    if(mat[x][y]!=0)
+    if(DpMat[x][y]!=0)
     {
         return DpMat[x][y];
     }
