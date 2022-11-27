@@ -2,23 +2,22 @@
 #include "my_mat.h"
 #define TRUE 1
 #define FALSE 0
+#define SIZE 10
 
-// N is the number of nodes in the graph
-int N;
 // The original 2d array
-int mat[N][N];
+int mat[SIZE][SIZE];
 // Using Dynamic Programming to calculate the shortest path for two nodes
-int DpMat[N][N];
+int DpMat[SIZE][SIZE];
 // The indexes in the arrays
 int i, j, k;
 
-void find_paths(int mat[][]){
+void find_paths(int mat [SIZE][SIZE]){
     BuildDpMat(mat);
-    for (k = 0; k < N; k++)
+    for (k = 0; k < SIZE; k++)
     {
-        for (j = 0; j < N; j++)
+        for (j = 0; j < SIZE; j++)
         {
-            for (i = 0; i < N; i++)
+            for (i = 0; i < SIZE; i++)
             {
                 if(DpMat[i][k] + DpMat[k][j] < DpMat[i][j])
                 {
@@ -32,10 +31,10 @@ void find_paths(int mat[][]){
     
 }
 //Copy the original 2d array to the DpMat array
-void BuildDpMat(int arr[][]){
-    for (int i = 0; i < N; i++)
+void BuildDpMat(int arr[SIZE][SIZE]){
+    for (int i = 0; i < SIZE; i++)
     {
-        for (int j = 0; j < N; j++)
+        for (int j = 0; j < SIZE; j++)
         {
             DpMat[i][j] = arr[i][j];
         }
@@ -52,7 +51,7 @@ void isPath(int x, int y){
     }
     else
     {
-        printf("FALSE")
+        printf("FALSE");
     }
 }
 
