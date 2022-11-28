@@ -26,11 +26,8 @@ void find_shortest_paths(int array [SIZE][SIZE]){
                     }
                 }
             }
-            
         }
-        
     }
-    
 }
 
 // Function number 2
