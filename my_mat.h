@@ -1,4 +1,3 @@
-void find_paths(int [10][10]);
-void isPath(int, int);
-int Shortest_path(int, int);
-void BuildDpMat(int [10][10]);
+void find_shortest_paths(int [10][10]);
+void isPath(int [10][10], int, int);
+void Shortest_path(int [10][10], int, int);
