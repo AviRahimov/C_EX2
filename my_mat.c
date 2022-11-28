@@ -21,7 +21,7 @@ void find_shortest_paths(int array [SIZE][SIZE]){
                     if(array[i][j]!=0){
                         array[i][j] = min(array[i][j], array[i][k] + array[k][j]);
                     }
-                    else{
+                    else if(array[i][j] == 0 && i!=j){
                         array[i][j] = array[i][k] + array[k][j];
                     }
                 }
