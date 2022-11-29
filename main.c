@@ -23,19 +23,16 @@ int main()
                 }
             }
             find_shortest_paths(mat);
-            printf("\n");
             break;
 
         case 'B':
             scanf("%d %d", &i, &j);
             isPath(mat, i, j);
-            printf("\n");
             break;
 
         case 'C':
             scanf("%d %d", &i, &j);
             Shortest_path(mat, i, j);
-            printf("\n");
             break;
         }
     }
