@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include "my_mat.h"
-#define TRUE 1
-#define FALSE 0
 #define SIZE 10
 
 int mat [SIZE][SIZE] = {0};
@@ -9,6 +7,8 @@ int mat [SIZE][SIZE] = {0};
 int min(int x, int y){
     return (x>y) ?  y : x;
 }
+
+// Floyd-Warshall algorithm
 void find_shortest_paths(int mat [SIZE][SIZE]){
     for (int k = 0; k < SIZE; k++)
     {
