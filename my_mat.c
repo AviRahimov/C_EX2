@@ -4,25 +4,24 @@
 #define FALSE 0
 #define SIZE 10
 
-// The original 2d array
-int mat[SIZE][SIZE];
+int mat [SIZE][SIZE] = {0};
 
 int min(int x, int y){
     return (x>y) ?  y : x;
 }
-void find_shortest_paths(int array [SIZE][SIZE]){
+void find_shortest_paths(int mat [SIZE][SIZE]){
     for (int k = 0; k < SIZE; k++)
     {
         for (int j = 0; j < SIZE; j++)
         {
             for (int i = 0; i < SIZE; i++)
             {
-                if(array[i][k]!= 0 && array[k][j]!=0){
-                    if(array[i][j]!=0){
-                        array[i][j] = min(array[i][j], array[i][k] + array[k][j]);
+                if(mat[i][k]!= 0 && mat[k][j]!=0){
+                    if(mat[i][j]!=0){
+                        mat[i][j] = min(mat[i][j], mat[i][k] + mat[k][j]);
                     }
-                    else if(array[i][j] == 0 && i!=j){
-                        array[i][j] = array[i][k] + array[k][j];
+                    else if(mat[i][j] == 0 && i!=j){
+                        mat[i][j] = mat[i][k] + mat[k][j];
                     }
                 }
             }
@@ -31,7 +30,7 @@ void find_shortest_paths(int array [SIZE][SIZE]){
 }
 
 // Function number 2
-void isPath(int mat[10][10], int x, int y){
+void isPath(int mat[SIZE][SIZE], int x, int y){
     if(mat[x][y]!=0)
     {
         printf("TRUE");
@@ -43,7 +42,7 @@ void isPath(int mat[10][10], int x, int y){
 }
 
 // Function number 3
-void Shortest_path(int mat[10][10], int x, int y){
+void Shortest_path(int mat[SIZE][SIZE], int x, int y){
     if(mat[x][y]!=0)
     {
         printf("%d", mat[x][y]);

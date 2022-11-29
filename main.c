@@ -3,25 +3,25 @@
 
 int main()
 {
-    int i, j, p;
-    char c;
+    int i = 0, j = 0, p = 0;
+    char c = 0;
     int mat[10][10];
 
     while (c != 'D')
     {
         scanf("%c", &c);
+
         switch (c)
         {
         case 'A':
-        for (int i = 0; i < 10; i++)
-        {
-            for (int j = 0; j < 10; j++)
+            for (int i = 0; i < 10; i++)
             {
-                scanf("%d", &p);
-                mat[i][j] = p;
+                for (int j = 0; j < 10; j++)
+                {
+                    scanf("%d", &p);
+                    mat[i][j] = p;
+                }
             }
-            
-        }
             find_shortest_paths(mat);
             printf("\n");
             break;
