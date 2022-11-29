@@ -1,10 +1,7 @@
 CC = gcc
 CFLAGS = -g -Wall
 AR = ar
-all: staticlib maindmat connections valtest
-
-valtest: 
-	valgrind --leak-check=full ./connections
+all: staticlib maindmat connections
 
 connections: main.o my_mat.o staticlib maindmat
 	$(CC) $(CFLAGS) main.o my_mat.o -o connections
