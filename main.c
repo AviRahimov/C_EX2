@@ -13,26 +13,30 @@ int main()
 
         switch (c)
         {
-        case 'A':
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
+            case 'A':
+              for (int i = 0; i < 10; i++)
                 {
-                    scanf("%d", &p);
-                    mat[i][j] = p;
+                   for (int j = 0; j < 10; j++)
+                   {
+                       scanf("%d", &p);
+                        mat[i][j] = p;
+                    }
                 }
-            }
-            find_shortest_paths(mat);
-            break;
+                find_shortest_paths(mat);
+                break;
 
         case 'B':
             scanf("%d %d", &i, &j);
+
             isPath(mat, i, j);
+            printf("\n");
             break;
 
         case 'C':
             scanf("%d %d", &i, &j);
+
             Shortest_path(mat, i, j);
+            printf("\n");
             break;
         }
     }

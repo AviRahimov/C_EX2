@@ -33,11 +33,11 @@ void find_shortest_paths(int mat [SIZE][SIZE]){
 void isPath(int mat[SIZE][SIZE], int x, int y){
     if(mat[x][y]!=0)
     {
-        printf("TRUE");
+        printf("True");
     }
     else
     {
-        printf("FALSE");
+        printf("False");
     }
 }
 
